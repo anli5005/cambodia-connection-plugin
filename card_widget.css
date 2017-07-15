@@ -7,6 +7,11 @@
   white-space: nowrap;
 }
 
+.widget_cambodia_cards > .cambodia-link,
+.widget_cambodia_cards > .cambodia-link:hover {
+  box-shadow: none;
+}
+
 .cambodia-card {
   background-color: white;
   color: black;

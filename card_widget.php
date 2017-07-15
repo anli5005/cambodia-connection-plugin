@@ -35,6 +35,9 @@ class Cambodia_Card_Widget extends WP_Widget {
       foreach ( $card_set->cards as $card_id ) {
         $card_class = array_key_exists( $card_id, $cards ) ? $cards[ $card_id ] : $cards[ 'default' ];
         $card = new $card_class;
+        if ( $card->link ) {
+          echo( '<a class="cambodia-link" href="' . $card->link . '">' );
+        }
         echo( '<div class="cambodia-card ' );
         if ( $card->hoverable ) {
           echo( 'cambodia-hoverable ' );
@@ -42,8 +45,10 @@ class Cambodia_Card_Widget extends WP_Widget {
         echo( $card->class . '">' );
         $card->card();
         echo( '</div>' );
+        if ( $card->link ) {
+          echo( '</a>' );
+        }
       }
-
       ?>
     </div>
   <?php }
@@ -55,6 +60,7 @@ class Cambodia_Card_Widget extends WP_Widget {
 
 class CC_Card {
   public $hoverable = false;
+  public $link = false;
   public $class = '';
 
   function __construct() {
@@ -108,7 +114,8 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 class CC_Default_Card extends CC_Card {
-  public $hoverable = false;
+  public $hoverable = true;
+  public $link = 'https://example.com';
   public $class = 'cambodia-default-card';
   static $id = 'default';
 
