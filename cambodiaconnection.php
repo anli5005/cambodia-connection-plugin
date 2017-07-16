@@ -8,4 +8,9 @@ Author: anli5005
 */
 
 include_once( 'card_widget.php' );
+include_once( 'school_taxonomy.php' );
+
+include_once( 'cards/recent.php' );
+
+include_once( 'card_sets/now.php' );
 ?>

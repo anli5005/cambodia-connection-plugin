@@ -1,14 +1,16 @@
 .widget_cambodia_cards {
   width: 100%;
-  overflow: auto;
 }
 
 .cambodia-horizontal {
+  overflow: auto;
   white-space: nowrap;
 }
 
 .widget_cambodia_cards > .cambodia-link,
-.widget_cambodia_cards > .cambodia-link:hover {
+.widget_cambodia_cards > .cambodia-link:hover,
+.widget_cambodia_cards > .cambodia-link:focus,
+.widget_cambodia_cards > .cambodia-link:active {
   box-shadow: none;
 }
 
@@ -21,8 +23,18 @@
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+.cambodia-card p,
+.cambodia-card h3 {
+  margin: 0;
+  padding: 0;
+}
+
 .cambodia-horizontal .cambodia-card {
   display: inline-block;
+  max-width: 400px;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cambodia-vertical .cambodia-card {
@@ -39,4 +51,18 @@
 
 .cambodia-default-card {
   padding: 8px;
+}
+
+.cc-card-content.blue,
+.cc-card-content.blue h3 {
+  background-color: #1E88E5;
+  color: white;
+}
+
+.cc-recent-card .cc-card-content {
+  padding: 8px;
+}
+
+.cc-recent-card .author {
+  font-style: italic;
 }
